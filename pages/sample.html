@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Page</title>
+    <link rel="stylesheet" href="./assets/css/sign-in.css">
+    
+
+   
+</head>
+<body>
+    <main class="auth-container" role="main">
+        <div class="auth-box">
+            <h1 class="visually-hidden">Authentication Page</h1>
+            <nav class="auth-nav" role="navigation" aria-label="Authentication options">
+                <button class="auth-tab active" data-mode="login" aria-pressed="true">Login</button>
+                <button class="auth-tab" data-mode="signup" aria-pressed="false">Sign Up</button>
+            </nav>
+            <form id="authForm" class="auth-form" novalidate>
+                <div class="form-group name-group hidden">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" aria-required="true" placeholder="Enter your full name">
+                    <span class="error-message" id="nameError" role="alert"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" aria-required="true" placeholder="Enter your email">
+                    <span class="error-message" id="emailError" role="alert"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" aria-required="true" placeholder="Enter your password" minlength="8">
+                    <span class="error-message" id="passwordError" role="alert"></span>
+                </div>
+                <div class="form-group confirm-password-group hidden">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" aria-required="true" placeholder="Confirm your password">
+                    <span class="error-message" id="confirmPasswordError" role="alert"></span>
+                </div>
+                <div class="submit-error-container">
+                    <span class="error-message" id="submitError" role="alert"></span>
+                </div>
+                <button type="submit" class="submit-button" aria-label="Submit form">
+                    <span class="button-text">Login</span>
+                    <span class="loading-text" aria-hidden="true">Processing...</span>
+                </button>
+            </form>
+        </div>
+    </main>
+    
+        <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const authTabs = document.querySelectorAll(".auth-tab");
+    const authForm = document.getElementById("authForm");
+    const nameGroup = document.querySelector(".name-group");
+    const confirmPasswordGroup = document.querySelector(".confirm-password-group");
+    const submitButton = document.querySelector(".submit-button .button-text");
+
+    authTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // Toggle active state on tabs
+            authTabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            // Update aria-pressed
+            authTabs.forEach(t => t.setAttribute("aria-pressed", "false"));
+            tab.setAttribute("aria-pressed", "true");
+
+            // Switch form mode
+            const mode = tab.dataset.mode;
+
+            if (mode === "signup") {
+                nameGroup.classList.remove("hidden");
+                confirmPasswordGroup.classList.remove("hidden");
+                submitButton.textContent = "Sign Up";
+            } else {
+                nameGroup.classList.add("hidden");
+                confirmPasswordGroup.classList.add("hidden");
+                submitButton.textContent = "Login";
+            }
+        });
+    });
+
+    // Handle form submission
+    authForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Clear previous errors
+        document.querySelectorAll(".error-message").forEach(error => {
+            error.textContent = "";
+        });
+
+        // Validate form inputs
+        const mode = document.querySelector(".auth-tab.active").dataset.mode;
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const confirmPassword = document.getElementById("confirmPassword").value.trim();
+        const name = document.getElementById("name").value.trim();
+
+        let isValid = true;
+
+        // Common validations
+        if (!email) {
+            document.getElementById("emailError").textContent = "Email is required.";
+            isValid = false;
+        }
+        if (!password) {
+            document.getElementById("passwordError").textContent = "Password is required.";
+            isValid = false;
+        }
+
+        // Sign Up specific validations
+        if (mode === "signup") {
+            if (!name) {
+                document.getElementById("nameError").textContent = "Full name is required.";
+                isValid = false;
+            }
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+                isValid = false;
+            }
+        }
+
+        if (isValid) {
+            // Process form submission (e.g., AJAX request)
+            console.log(mode === "signup" ? "Signing up..." : "Logging in...");
+            console.log({ name, email, password });
+            alert(mode === "signup" ? "Sign Up Successful!" : "Login Successful!");
+        }
+    });
+});
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,1001 @@
+/* header section starts */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    
+}
+body{
+    background:#E0F1FF ;   
+    width: 100%;
+}
+
+.menu_bar{
+    margin: 50px 0px;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(126, 126, 236);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+
+}
+.menu_bar img{
+    width: 100px;
+    height: 100px;
+    margin-left: 50px;
+}
+
+.menu_bar ul{
+    margin-left: 500px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+}
+
+.menu_bar ul li{
+    padding: 20px 30px;
+    position: relative;
+}
+.menu_bar ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+
+    transition: all 0.3s;
+}
+.menu_bar ul li a:hover{
+    color: white;
+}
+.dropdown__menu{
+    display: none;
+}
+
+.menu_bar ul li:hover .dropdown__menu{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(126, 126, 236);
+    border-radius: 0px 00px 20px 20px;
+    z-index: 1;
+    transition: all 2s;
+}
+
+.dropdown__menu ul{
+    display: block;
+    margin: 10px;
+}
+.dropdown__menu ul li{
+    width: 150px;
+    padding: 10px;
+}
+
+.sign-up{
+    float: right;
+    margin-right: 190px;
+    display: flex;
+
+}
+.sign-up button{
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    color: red;
+    border-radius: 25px;
+    margin: 3px;
+}
+.sign-up button:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.3s;
+}
+.sign-up button a{
+    text-decoration: none;
+    color:red;
+    font-weight: bolder;
+}
+/* Header Section END */
+
+/* Home Section Starts */
+
+.home{
+    margin-bottom: 50px;
+}
+.home .carousel .carousel-inner .carousel-item img{
+    width: 100%;
+    height: 580px;
+    filter: brightness(0.8);
+}
+.home .head{
+    margin-top: -350px;
+    position: absolute;
+    text-align: center;
+    color: white;
+    margin-left: 375px;
+}
+.home .section1{
+    margin: 50px 100px 50px 100px;
+}
+.home .section1 img{
+    width: 650px;
+    height: 500px;
+    border-radius: 30px;
+    float: right;
+    
+    
+}
+.home .section1 img:hover{
+    filter: brightness(1.2);
+}
+.home .section1 .content{
+    width: 500px;
+    margin-top: 50px;
+}
+.home .section1 .content button{
+    width: 300px;
+    height: 60px;
+    margin-top: 50px;
+    border-radius: 30px;
+    background-color: rgb(88, 88, 222);
+
+}
+.home .section1 .content button:hover{
+    background-color: black;
+}
+.home .section1 .content button a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+.home .section2{
+    margin: 50px 100px 50px 100px;
+}
+
+.home .section2 h2{
+    text-align: center;
+    
+}
+.home .section2 .tradi{
+    display: inline-block;
+    width: 350px;
+    height: 400px;
+    background-color: gray;
+    margin: 80px 25px 25px 25px;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.home .section2 .tradi a{
+    text-decoration: none;
+    color: white;
+}
+.home .section2 .tradi a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.home .section2 .tradi img{
+    width: 350px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+.home .section2 .tradi img:hover{
+    filter: brightness(0.7);
+}
+
+.home .section3{
+    margin: 50px 100px 50px 100px;
+}
+
+/* image sliding starts */
+@keyframes slide{
+    from{
+        transform: translateX(0);
+    }to{
+        transform: translateX(-100%);
+    }
+}
+
+.home .section3 h2{
+    margin-bottom: 50px;
+    text-align: center;
+}
+.home .section3 .design_imgs{
+    overflow: hidden;
+    padding: 60px 0px;
+    background-color: rgb(213, 216, 215);
+    white-space: nowrap;
+    position: relative;
+}
+.home .section3 .design_imgs::after, .design_imgs::before{
+      position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%; 
+       content: "";
+    z-index: 2;  
+}
+.home .section3 .design_imgs:before{
+    left: 0;
+    background: linear-gradient(to left, transparent,white);
+ 
+}
+.home .section3 .design_imgs::after{
+    right: 0;
+    background: linear-gradient(to right, transparent,white);
+
+}
+.home .section3 .design_imgs:hover .img_slide{
+    animation-play-state: paused;
+}
+.home .section3 .design_imgs .img_slide{
+    display: inline-block;
+    animation: 45s slide infinite linear;
+}
+
+.home .section3 .design_imgs .img_slide img{
+    height: 200px;
+    width: 200px;
+    margin: 0 40px;
+    border-radius: 6px;
+    filter: brightness(1.1);
+}
+
+/* Home page images slide End */
+
+.home .section4{
+    margin: 50px 100px 50px 100px;
+    text-align: center;
+
+}
+.home .section4 .member{
+    display: flex;
+    
+}
+
+.home .section4 .member1{
+    width: 250px;
+    height: 300px;
+    background-color: rgb(222, 217, 217);
+    border-radius: 25px;
+    margin: 25px;
+    text-align: center;
+    padding-top: 50px;
+}
+.home .section4 .member1 img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+}
+
+.home .section5{
+    margin: 50px 50px;
+    text-align: center;
+
+}
+.home .section5 .test{
+    display: flex;
+}
+.home .section5 .test .test1{
+    width: 400px;
+    height: 200px;
+    background-color:  rgb(126, 126, 236);
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 20px;
+    margin: 30px;
+}
+
+/* Home page END */
+
+/* About page Starts */
+
+.about{
+    margin: 50px 0px;
+}
+.about .carousel .carousel-inner .carousel-item img{
+    width: 100%;
+    height: 600px;
+    filter: brightness(0.8);
+}
+.about .section1{
+    
+    position: absolute;
+    margin-top: -62px;
+    margin-left: 150px;
+    width: 200px;
+    height: 60px;
+    background-color: gray;
+    text-align: center;
+    border-radius: 25px;
+}
+.about .section2{
+    margin: 50px 100px;
+    padding-top: 50px;
+}
+.about .section2 p{
+    width: 500px;
+    margin-left: 50px;
+    text-align: justify;
+    
+}
+.about .section2 button{
+    width: 150px;
+    height: 40px;
+    margin-left: 50px;
+    border-radius: 10px;
+    background-color: white;
+}
+.about .section2 button a{
+    text-decoration: none;
+    color: rgb(104, 99, 99);
+}
+.about .section2 button:hover {
+    background-color: black;
+    
+}
+.about .section2 img{
+    width: 600px;
+    margin-left: 600px;
+    margin-top: -400px;
+    border-radius: 30px;
+}
+.about .section3{
+    margin-top: 50px;
+    margin-bottom: 200px;
+    margin-left: 100px;
+}
+.about .section3  img{
+    width: 400px;
+    height: 400px;
+}
+.about .section3 .content .vision{
+    width: 250px;
+    margin-left: 450px;
+    margin-top: -350px;
+}
+.about .section3 .content .mission{
+    margin-left: 800px;
+    margin-top: -335px;
+}
+.about .section3 .content .values{
+    margin-left: 1060px;
+    margin-top: -220px;
+}
+.about .section4 {
+    margin: 50px 100px ;
+    text-align: center;
+}
+.about .section4 .member {
+    display: inline-block;
+    
+    padding: 50px;
+}
+.about .section4 .member:hover{
+    width: 200px;
+    height: 300px;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 3s;
+}
+.about .section4 .member img{
+    width: 120px;
+}
+
+.about .section5 h3{
+    text-align: center;
+  
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.about .section5 .accordion .accordion-item{
+    width: 50%;
+    margin-left: 400px;
+}
+/* Services Page starts */ 
+
+.services .carousel .carousel-inner .carousel-item img{
+    width: 100%;
+    height: 400px;
+}
+
+.services .carousel .service_name{
+    width: 170px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 25px;
+    position: sticky;
+    margin-top: -70px;
+    margin-left: 100px;
+    text-align: center;
+}
+
+.services .service_section1{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.services .service_section1 p{
+    width: 400px;
+    text-align: justify;
+    margin-left: 250px;
+    
+}
+.services .service_section1 img{
+    width: 500px;
+    height: 300px;
+    border-radius: 25px;
+    margin-left: 700px;
+    margin-top: -250px;
+}
+.services .service_section2 img{
+    width: 500px;
+    height: 300px;
+    border-radius: 25px;
+    filter: brightness(0.8);
+    margin-left: 250px;
+}
+.services .service_section2{
+    margin-bottom: 100px;
+}
+.services .service_section2 h2{
+    text-decoration: underline;
+    margin-left: 790px;
+    margin-top: -270px;
+}
+
+.services .service_section2 p{
+    width: 400px;
+    text-align: justify;
+    margin-left: 790px;
+    margin-top: 30px;
+}
+.services .service_section3{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.services .service_section3 img{
+    width: 500px;
+    height: 300px;
+    border-radius: 25px;
+    filter: brightness(0.8);
+    margin-left: 750px;
+}
+.services .service_section3 h2{
+    text-decoration: underline;
+    margin-left: 250px;
+    margin-top: -270px;
+}
+
+.services .service_section3 p{
+    width: 400px;
+    text-align: justify;
+    margin-left: 250px;
+    margin-top: 30px;
+}
+
+.services .service_section4{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.services .service_section4 img{
+    width: 500px;
+    height: 300px;
+    border-radius: 25px;
+    filter: brightness(0.8);
+    margin-left: 250px;
+}
+
+.services .service_section4 h2{
+    text-decoration: underline;
+    margin-left: 790px;
+    margin-top: -270px;
+}
+
+.services .service_section4 p{
+    width: 400px;
+    text-align: justify;
+    margin-left: 790px;
+    margin-top: 30px;
+}
+
+.services .book{
+    width: 400px;
+    height: 60px;
+    background-color: rgb(112, 112, 225);
+    border-radius: 30px;
+    margin-top: 50px;
+    margin-left: 550px;
+    margin-bottom: 50px;
+}
+
+
+.services .book a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.services .book a:hover{
+    color: black;
+    font-weight: bolder;
+}
+.services h1{
+    text-align: center;
+
+}
+
+.services .upcoming{
+    display: flex;
+  
+   margin-left: 250px;
+}
+.services .upcoming img{
+    width: 500px;
+    height: 300px;
+    border-radius: 40px;
+    filter: brightness(0.9);
+   
+    
+}
+.services .upcoming img:hover{
+    filter: brightness(1);
+}
+.services .upcoming .img2{
+    
+    margin-left: 40px;
+}
+
+.services .upcoming h2{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Contact Page Starts  */
+
+.contact img{
+    width: 100%;
+    height: 600px;
+    filter: brightness(0.6);
+}
+.contact .contact_name{
+    width: 170px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 25px;
+    position: sticky;
+    margin-top: -70px;
+    margin-left: 100px;
+    text-align: center;
+    color: black;
+   
+}
+
+.contact .section1{
+    display: flex;
+    margin-top: 150px;
+}
+.contact .section1 img{
+    width: 500px;
+    height: 400px;
+    margin-left: 150px;
+    border-radius: 30px;
+}
+.contact .section1 img:hover{
+    filter: brightness(1);
+    
+    height: 420px;
+}
+
+.contact .section1 .contact_form{
+    margin-left: 150px;
+    
+}
+
+.contact .section1 .contact_form input{
+    width: 450px;
+}
+
+.contact .section1 .contact_form .btn{
+    background-color: rgb(126, 126, 236);
+    color: white;
+    font-weight: bold;
+}
+.contact .section1 .contact_form .btn:hover{
+    background-color: black;
+}
+
+.contact iframe{
+    width: 85%;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 100px;
+    border: 2px solid black;
+    border-radius: 30px;
+    margin-bottom: 50px;
+}
+
+.contact .quot{
+    width: 600px;
+    height: 40px;
+    background-color: rgb(126, 126, 236);
+    border-radius: 25px;
+    margin-left: 450px;
+    margin-bottom: 50px;
+}
+.contact .quot p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+/* Contact Page ENd */
+
+/* Footer Section Starts */
+
+.footer{
+    width: 100%;
+    height: 400px;
+    background-color: rgb(126, 126, 236);
+    display: flex;
+    color: white;
+}
+
+.footer .set1{
+    width: 400px;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+.footer .set1 p{
+    text-align: justify;
+}
+.footer .set1 h3{
+    text-decoration: underline;
+}
+.footer .set1 .icons{
+    margin-top: 10px;
+}
+.footer .set1 .icons i{
+    margin-left: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+.footer .set2{
+    margin-left: -50px;
+    margin-top: 50px;
+}
+.footer .set2 h3{
+    text-decoration: underline;
+}
+
+.footer .set1 li{
+    list-style-type: none;
+}
+.footer .set1 li a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer_bottam{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    display: flex;
+    padding-left: 70px;
+    padding-top:  15px;
+}
+.footer_bottam a{
+    text-decoration: none;
+    color: white;
+    margin-left: 50px;
+}
+.footer_bottam .carrer{
+    margin-left: 480px;
+}
+
+/* Footer End */
+
+/* Portfolio page starts */
+
+.portfolio .image{
+    width: 60%;
+    height: 500px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.portfolio .section1{
+    width: 450px;
+    text-align: justify;
+    float: right;
+    margin-right: 125px;
+    margin-top: 30px;
+}
+
+.portfolio .section2{
+    margin: 50px 150px 50px 150px;
+
+}
+
+.portfolio .section2 h1{
+    margin-bottom: 70px;
+    text-decoration: underline;
+}
+
+.portfolio .projects{
+    margin: 0 150px 50px 150px;
+}
+.portfolio .projects img{
+    filter: brightness(0.7);
+}
+
+.portfolio .projects img:hover{
+    border: 1px solid black;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 3s;
+    filter: brightness(1.2);
+    
+    
+}
+.portfolio .projects .proj1 img{
+    width: 500px;
+    height: 400px;
+    border-radius: 30px;
+
+}
+.portfolio .projects .proj2 img{
+    width: 600px;
+    height: 300px;
+    border-radius: 30px; 
+    margin-left: 550px;
+    margin-top: -520px;  
+ 
+}
+
+.portfolio .projects .proj3 img{
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+
+}
+
+.portfolio .projects .proj4 img{
+    width: 600px;
+    height: 400px;
+    border-radius: 30px;
+    margin-left: 550px;
+    margin-top: -420px;
+
+}
+
+.portfolio .projects .proj5 img{
+    height: 400px;
+    border-radius: 30px;
+}
+.portfolio .projects .proj6 img{
+    width: 600px;
+    height: 500px;
+    border-radius: 30px;
+    margin-left: 650px;
+    margin-top: -400px; 
+}
+.portfolio .projects .proj7 img{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    margin-top: -70px;
+}
+.portfolio .projects .proj8 img{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    margin-top: -320px;
+    margin-left: 330px;
+}
+
+.portfolio .projects .proj9 img{
+    width: 580px;
+    height: 250px;
+    border-radius: 20px;
+    margin-left: 650px;
+    margin-top: -250px;
+}
+
+.portfolio .projects .proj10 img{
+    width: 600px;
+    height: 400px;
+    border-radius: 20px;
+}
+.portfolio .projects .proj11 img{
+    width: 600px;
+    height: 400px;
+    border-radius: 20px;
+    margin-left: 630px;
+    margin-top: -410px;
+}
+.portfolio .projects .proj12 img{
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    
+}
+.portfolio .projects .proj13 img{
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    margin-left: 440px;
+    margin-top: -310px;
+    
+}
+.portfolio .projects .proj14 img{
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    margin-left: 860px;
+    margin-top: -350px;
+    
+}
+
+/* traditional page starts */
+
+.traditional{
+    margin-bottom: 150px;
+}
+
+
+
+.traditional img{
+    width: 100%;
+    height: 650px;
+    filter: brightness(0.8);
+    
+}
+.traditional .section1{
+    text-align: center;
+    width: 900px;
+    margin-left: 300px;
+    background-color: transparent;
+    color: white;
+    margin-top: -300px;
+    position: absolute;
+}
+
+.traditional .section2{
+    margin: 50px 100px 50px 100px;
+}
+.traditional .section2 img{
+    width: 600px;
+    height: 450px;
+    border-radius: 20px;
+}
+.traditional .section2 .designs{
+    width: 650px;
+    text-align: justify;
+    margin-left: 650px;
+    margin-top: -450px;
+}
+
+.traditional .section3{
+    
+    margin: 50px 0;
+}
+
+/* image sliding starts */
+@keyframes slide{
+    from{
+        transform: translateX(0);
+    }to{
+        transform: translateX(-100%);
+    }
+}
+
+.traditional .section3 h1{
+    margin-left: 120px;
+}
+.traditional .section3 .design_imgs{
+    overflow: hidden;
+    padding: 60px 0px;
+    background-color: rgb(213, 216, 215);
+    white-space: nowrap;
+    position: relative;
+}
+.traditional .section3 .design_imgs::after, .design_imgs::before{
+      position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%; 
+       content: "";
+    z-index: 2;  
+}
+.traditional .section3 .design_imgs:before{
+    left: 0;
+    background: linear-gradient(to left, transparent,white);
+ 
+}
+.traditional .section3 .design_imgs::after{
+    right: 0;
+    background: linear-gradient(to right, transparent,white);
+
+}
+.traditional .section3 .design_imgs:hover .img_slide{
+    animation-play-state: paused;
+}
+.traditional .section3 .design_imgs .img_slide{
+    display: inline-block;
+    animation: 45s slide infinite linear;
+}
+
+.traditional .section3 .design_imgs .img_slide img{
+    height: 200px;
+    width: 200px;
+    margin: 0 40px;
+    border-radius: 6px;
+    filter: brightness(1.1);
+}
+
+/* images slide End */
+
+.traditional .section4 button{
+      width: 400px;
+    height: 60px;
+    background-color: rgb(112, 112, 225);
+    border-radius: 30px;
+    margin-top: 50px;
+    margin-left: 550px;
+    margin-bottom: 50px;
+
+}
+.traditional .section4 button:hover{
+    background-color: black;
+}
+.traditional .section4 button a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.traditional .section5 h3{
+    margin-left: 120px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.traditional .section5 .accordion .accordion-item{
+    width: 60%;
+    margin-left: 300px;
+}
+
+.traditional .section6{
+    width: 800px;
+    margin-left: 350px;
+    margin-top: 100px;
+    text-align: center;
+}
+.traditional .section6 h3{
+    text-decoration: underline;
+}
+ /* traditional page END */
+ 
+
+/* Booking Page starts */
+

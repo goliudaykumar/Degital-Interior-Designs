@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rs Dashboard</title>
+</head>
+<body>
+    <div class="grid-container">
+        <header  class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">
+                    <i class="bi bi-list"></i>
+                </span>  
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">
+                    <i class="bi bi-search"></i>
+                </span>  
+            </div>
+            <div class="header-right">
+                <span class="material-icons-outlined">
+                    <i class="bi bi-bell"></i>
+                </span>
+                <span class="material-icons-outlined">
+                    <i class="bi bi-envelope"></i>                
+                </span> 
+                <span class="material-icons-outlined">
+                    <i class="bi bi-person-circle"></i>                
+                </span>   
+            </div>
+        </header>
+
+
+        <aside id="sidebar">
+            <div class="sidebar-title">
+               <div class="sidebar-brand">
+                <span class="material-icons-outlined">
+                    <i class="bi bi-view-list">Dashboard</i>                
+                </span>  
+               </div>     
+               <span class="material-icons-outlined" onclick="closeSidebar()">
+                    <i class="bi bi-x-lg"></i>
+               </span>       
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">
+                        <i class="bi bi-view-list"> Dashboard</i>                
+                    </span>  
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">
+                        <i class="bi bi-people-fill"> Users</i>                    
+                    </span>  
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">
+                        <i class="bi bi-briefcase"> Projects</i>                    
+                    </span>  
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">
+                        <i class="bi bi-shop"> Services</i>                
+                    </span>  
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">
+                        <i class="bi bi-bar-chart-line-fill"> Analytics</i>                
+                    </span>  
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">
+                        <i class="bi bi-gear-fill"> Settings</i>                
+                    </span>  
+                </li>
+            </ul>
+            <button type="button">Logout</button>
+        </aside>
+
+
+        <main class="main-container">
+            <div class="main-title">
+                <h2>Dashboard</h2>
+            </div>
+            <div class="main-cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Users</h4>
+                        <i class="bi bi-people-fill"></i>
+
+                    </div>
+                    <h3>1024+</h3>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Projects</h4>
+                        <i class="bi bi-briefcase"></i>
+
+                    </div>
+                    <h3>125+</h3>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Services</h4>
+                        <i class="bi bi-shop"></i>
+
+                    </div>
+                    <h3>24+</h3>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Orders + Appointments</h4>
+                        <i class="bi bi-cart"></i>
+
+                    </div>
+                    <h3>16+</h3>
+                </div>
+            </div>
+            <div class="bottam-cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Analytics</h4>
+                        <i class="bi bi-bar-chart-line-fill"></i>
+
+                    </div>
+                    <h3>106+</h3>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Coming Soon Services</h4>
+                        <i class="bi bi-clock-fill"></i>
+
+                    </div>
+                    <h3>2+</h3>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+    <script>
+        var sidebarOpen = false;
+        var sidebar = document.getElementById("sidebar");
+
+        function openSidebar(){
+            if(!sidebarOpen){
+                sidebar.classList.add("sidebar-responsive");
+                sidebarOpen = true;
+            }
+        }
+
+        function closeSidebar(){
+            if(sidebarOpen){
+                sidebar.classList.remove("sidebar-responsive");
+                sidebarOpen = false;
+            }
+        }
+    </script>
+</body>
+</html>

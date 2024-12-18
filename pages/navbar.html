@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - F&F Digital Interior Designs</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      :root {
+    --primary-color: #292F36;
+    --accent-color: #CDA274;
+    --error-color: #dc3545;
+    --text-color: #333;
+    --border-color: #ddd;
+    --focus-shadow: rgba(205, 162, 116, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.auth-box {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.auth-nav {
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-tab:hover {
+    color: var(--accent-color);
+}
+
+.auth-tab:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: -3px;
+    border-radius: 4px;
+}
+
+.auth-tab.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.hidden {
+    display: none;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--focus-shadow);
+}
+
+.form-group input[aria-invalid="true"] {
+    border-color: var(--error-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.error-message:not(:empty) {
+    display: block;
+}
+
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:not(:disabled):hover {
+    background-color: var(--accent-color);
+}
+
+.submit-button:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.loading-text {
+    display: none;
+}
+
+.submit-button[aria-busy="true"] .button-text {
+    display: none;
+}
+
+.submit-button[aria-busy="true"] .loading-text {
+    display: inline;
+}
+
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 1.5rem;
+    }
+    
+    .auth-tab {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+    
+    .form-group input {
+        padding: 0.7rem;
+    }
+    
+    .submit-button {
+        padding: 0.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .auth-tab,
+    .form-group input,
+    .submit-button {
+        transition: none;
+    }
+}
+
+@media screen and (forced-colors: active) {
+    .auth-tab.active {
+        border-bottom-color: CanvasText;
+    }
+    
+    .submit-button {
+        border: 1px solid CanvasText;
+    }
+}
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <img src="/images/logo.jpg" alt="F&F Digital Interior Designs Logo" class="logo">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about" class="nav-link" aria-current="page">About</a>
+                <a href="/services" class="nav-link">Services</a>
+                <a href="/portfolio" class="nav-link">Portfolio</a>
+                <a href="/contact" class="nav-link">Contact</a>
+                <a href="/signup" class="sign-up-button">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <img src="/images/about-hero.jpg" alt="Modern interior design showcase" class="hero-image">
+            <h1 id="hero-title">About</h1>
+        </section>
+
+        <section class="description" aria-label="Company introduction">
+            <p>In today's fast-paced digital world, the way we approach interior design has evolved dramatically. <strong>Full Stack Force (F&F)</strong> Digital Interior Designs is at the forefront of this transformation, combining cutting-edge technology, creative expertise, and an end-to-end service model to deliver innovative, personalized, and seamless design experiences for clients across the globe.</p>
+        </section>
+
+        <section class="showcase">
+            <img src="/images/interior-showcase.jpg" alt="Elegant interior design project showcase" class="showcase-image">
+        </section>
+
+        <section class="mission" aria-label="Company mission">
+            <p>F&F is a full-service design firm reviewing high-end new build, gut renovation, and comprehensive furnishing and decor projects in both the residential and boutique commercial spaces. Our mission is to approach each project holistically with a commitment to design spaces that are a true reflection of the clients living in them.</p>
+        </section>
+
+        <section class="team" aria-labelledby="team-title">
+            <h2 id="team-title">Our Team</h2>
+            <div class="team-grid">
+                <article class="team-member">
+                    <img src="/images/uday-kumar.jpg" alt="Uday Kumar" class="member-image">
+                    <h3>Uday Kumar</h3>
+                    <p>Developer</p>
+                </article>
+                <article class="team-member">
+                    <img src="/images/phaneendra.jpg" alt="Phaneendra" class="member-image">
+                    <h3>Phaneendra</h3>
+                    <p>Front-End Developer</p>
+                </article>
+                <article class="team-member">
+                    <img src="/images/naveen.jpg" alt="Naveen" class="member-image">
+                    <h3>Naveen</h3>
+                    <p>Back-End Developer</p>
+                </article>
+                <article class="team-member">
+                    <img src="/images/abhilash.jpg" alt="Abhilash" class="member-image">
+                    <h3>Abhilash</h3>
+                    <p>Front-End Developer</p>
+                </article>
+            </div>
+            <div class="pagination" role="navigation" aria-label="Team members pagination">
+                <button class="pagination-dot" aria-label="Page 1" aria-current="true"></button>
+                <button class="pagination-dot" aria-label="Page 2"></button>
+                <button class="pagination-dot" aria-label="Page 3"></button>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="company-info">
+                <h2>F&F Digital Interior Designs</h2>
+                <p>Full Stack Force (F&F) Digital Interior Designs is at the forefront of this transformation, combining cutting-edge technology, creative expertise, and an end-to-end service model to deliver innovative, personalized, and seamless design experiences for clients across the globe.</p>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                        <img src="/images/facebook-icon.png" alt="" class="social-icon">
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter page">
+                        <img src="/images/twitter-icon.png" alt="" class="social-icon">
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
+                        <img src="/images/instagram-icon.png" alt="" class="social-icon">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn page">
+                        <img src="/images/linkedin-icon.png" alt="" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <h3>Our Links</h3>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/portfolio">Portfolio</a>
+                <a href="/contact">Contact</a>
+            </nav>
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <address>
+                    Jayabheri Silicon Towers, Dhlf Vc<br>
+                    Silicon Tower, 6th floor, Hi-tech City,<br>
+                    Kothaguda Hyderabad, Telangana 500032<br>
+                    <br>
+                    <a href="tel:+919090909090">+91 9090909090</a><br>
+                    <a href="mailto:ff@interiordesigns.com">ff@interiordesigns.com</a>
+                </address>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2024 F&F Digital Interior Designs All Rights Reserved.</p>
+            <nav class="legal-links" aria-label="Legal links">
+                <a href="/careers">Careers</a>
+                <a href="/terms">Terms Of Use</a>
+                <a href="/privacy">Privacy Policy</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+about page

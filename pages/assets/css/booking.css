@@ -1,0 +1,148 @@
+body{
+    background: lavender;
+}
+.booking-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+}
+.booking-container .headertop{
+    margin: 50px 100px;
+    display: flex;
+}
+.booking-container .headertop img{
+    width: 150px ;
+    height: 150px;
+    margin-left: -100px;
+}
+.booking-container .headertop h1{
+    text-align: center;
+    margin-top: 50px;
+    text-decoration: underline;
+    font-family: 'Times New Roman', Times, serif;
+}
+.appointment-heading {
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 25px;
+    padding: 25px;
+    background-color: rgb(223, 217, 208);
+    border-radius: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 130px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 70%;
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.submit-button {
+    background-color: #000;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #333;
+}
+
+.confirmation-message {
+    text-align: center;
+    padding: 2rem;
+}
+
+.calendar-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+    .booking-container {
+        width: 95%; /* Further reduce container width for mobile devices */
+    }
+
+    .booking-container .headertop img {
+        width: 120px; /* Smaller logo size */
+        height: 120px;
+    }
+
+    .booking-container .headertop h1 {
+        font-size: 1.25rem; /* Slightly smaller heading */
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea,
+    .submit-button,
+    .calendar-button {
+        width: 100%; /* Full width inputs and buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-container {
+        padding: 1rem; /* Reduced padding for small screens */
+    }
+
+    .booking-container .headertop h1 {
+        font-size: 1.1rem; /* Further reduce heading size */
+    }
+
+    .form-group {
+        margin-left: 0; /* No left margin on smaller screens */
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea,
+    .submit-button,
+    .calendar-button {
+        width: 100%; /* Full width inputs and buttons */
+    }
+}
